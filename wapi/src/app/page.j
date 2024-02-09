@@ -14,6 +14,7 @@ export default function Home() {
             const { latitude, longitude } = coords;
             setLatitude1(latitude)
             setLongitude(longitude)
+  const [_latitude, setLatitude] = useState();
   distance(_latitude,_longitude,-4.294665222783007, 39.583367066599514,"k")
 
           

@@ -3,9 +3,17 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import {useState,useEffect} from "react"
 
+import App from "@/components/App";
+import ItemSingle from "@/components/ItemSingle";
+import SearchBar from "@/components/SearchBar";
+import { Text, Flex, Spinner } from "@chakra-ui/react";
+// import { useSearch } from "../utils/search";
+import { useSearch } from "../utils/search";
+
 export default function Home() {
   const [_latitude, setLatitude1] = useState();
   const [_longitude, setLongitude ]= useState();
+  // const {  search, onSearch } = useSearch();
 
   useEffect(() => {
     if('geolocation' in navigator) {
@@ -14,7 +22,7 @@ export default function Home() {
             const { latitude, longitude } = coords;
             setLatitude1(latitude)
             setLongitude(longitude)
-  distance(_latitude,_longitude,-4.294665222783007, 39.583367066599514,"k")
+            distance(_latitude,_longitude,-4.294665222783007, 39.583367066599514,"k")
 
           
         })
@@ -47,20 +55,39 @@ export default function Home() {
   };
 
   return (
-    <main className={styles.main}>
-      {/* {distance(
-        -4.294665222783007,
-        39.583367066599514,
-        -4.350683128915565,
-        39.563438280120444,
-        "K"
+    // <main className={styles.main}>
+      <App>
+              <Text mb={2} fontSize="sm">
+        {"Active "}
+        <b>{"Items"}</b>
+      </Text>
+      <SearchBar  />
+
+      {/* {loading ? (
+        <Flex pt={24} align="center" justify="center">
+          <Spinner size="xl" label="Loading items" />
+        </Flex>
+      ) : (
+        <>
+          {filteredItems.length ? (
+            filteredItems.map((item) => <ItemSingle item={item} />)
+          ) : (
+            <EmptySearch />
+          )} */}
+          {/* <Flex justify="flex-end" as="i" color="gray.500">
+            {`Showing ${filteredItems.length} out of ${allItems.length} items `}
+          </Flex>
+        </>
       )} */}
-      {_latitude}  {' '}  {_longitude}{' '}
+
+      </App>
+
+      // {_latitude}  {' '}  {_longitude}{' '}
   
-      <div className={styles.center}>
-      {  distance(_latitude,_longitude,-4.294665222783007, 39.583367066599514,"k")}
-      </div>
-    </main>
+      // <div className={styles.center}>
+      // {  distance(_latitude,_longitude,-4.294665222783007, 39.583367066599514,"k")}
+      // </div>
+    // </main>
   );
 }
 

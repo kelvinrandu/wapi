@@ -21,7 +21,7 @@ const SearchBar = () => {
         <Input
           placeholder="write something here ..."
           color="teal"
-          BorderColor="red"
+       
           focusBorderColor="red"
           size="sm"
           variant="filled"

@@ -2,7 +2,7 @@ import React from "react";
 import { useColorModeValue,Input,InputGroup,InputLeftElement,Flex} from "@chakra-ui/react";
 import {Search2Icon} from "@chakra-ui/icons";
 
-const SearchBar = ({search, onSearch}) => {
+const SearchBar = () => {
     const bg = useColorModeValue("#F2F1F9", "rgb(103 101 113 / 4%)");
     const color = useColorModeValue("black", "white");
  

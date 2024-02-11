@@ -8,7 +8,7 @@ const SearchBar = () => {
  
   return (
     <Flex align={"center"}>
-      <InputGroup
+      {/* <InputGroup
         display={["block", "block", "block"]}
         width="100%"
         ml={16}
@@ -30,7 +30,16 @@ const SearchBar = () => {
         //   value={search}
         //   onChange={ onSearch}
         />
-      </InputGroup>
+      </InputGroup> */}
+        <InputGroup>
+    {/* <InputLeftElement pointerEvents='none'>
+      <Search2Icon color='gray.300' />
+    </InputLeftElement> */}
+    <InputLeftElement pointerEvents='none'>
+  <Search2Icon color='gray.300' />
+</InputLeftElement>
+    <Input type='tel' placeholder='write something here ...' />
+  </InputGroup>
     </Flex>
   );
 };

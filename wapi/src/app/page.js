@@ -36,6 +36,8 @@ export default function Home() {
           
         })
     }
+        	//add this below comment ↓ 
+   // eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
 
   const distance = (lat1, lon1, lat2, lon2, unit) => {
@@ -71,7 +73,7 @@ export default function Home() {
         <b>{"Items"}</b>
       </Text>
       <SearchBar  />
-      {items.map((item) => <ItemSingle item={item} distance={distance} />)}
+      {items.map((item,key) => <ItemSingle item={item} key={key} distance={distance} />)}
 
       {/* {loading ? (
         <Flex pt={24} align="center" justify="center">

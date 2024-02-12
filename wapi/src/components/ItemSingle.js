@@ -15,7 +15,7 @@ const badgeColors = {
   electronics: "yellow",
 };
 
-const ItemSingle = ({ item,distance}) => {
+const ItemSingle = ({ item,key,distance}) => {
   const [itemDetail, setItemDetail] = useState(false);
   const [_latitude, setLatitude1] = useState();
   const [_longitude, setLongitude ]= useState();
@@ -31,6 +31,8 @@ const ItemSingle = ({ item,distance}) => {
           
         })
     }
+    	//add this below comment ↓ 
+   // eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
 
   function ItemDetailHandler() {
@@ -42,6 +44,7 @@ const ItemSingle = ({ item,distance}) => {
         transform: "translateY(-3px)",
         boxShadow: "dark-lg",
       }}
+      key={key}
       borderWidth="1px"
       borderRadius={8}
       mb={2}

@@ -14,6 +14,15 @@ export default function Home() {
   const [_latitude, setLatitude1] = useState();
   const [_longitude, setLongitude ]= useState();
   // const {  search, onSearch } = useSearch();
+  const items =[
+    {name:'TRIBEEARTH',longitude:"39.583367066599514",latitude:"-4.294665222783007",phone:"",tags:""},
+    {name:'SALTY SQUID',longitude:"39.563438280120444",latitude:"-4.350683128915565",phone:"",tags:""},
+    // {name:'TRIBEEARTH',longitude:"",latitude:"",phone:"",tags:""},
+    // {name:'TRIBEEARTH',longitude:"",latitude:"",phone:"",tags:""},
+    // {name:'TRIBEEARTH',longitude:"",latitude:"",phone:"",tags:""},
+    // {name:'TRIBEEARTH',longitude:"",latitude:"",phone:"",tags:""},
+    // {name:'TRIBEEARTH',longitude:"",latitude:"",phone:"",tags:""},
+]
 
   useEffect(() => {
     if('geolocation' in navigator) {
@@ -50,7 +59,7 @@ export default function Home() {
         dist = dist * 1.609344;
       }
       // if (unit=="N") { dist = dist * 0.8684 }
-      return dist + " km";
+      return dist<1 ? 'nearby': Math.round(dist) + " km";
     }
   };
 
@@ -62,6 +71,7 @@ export default function Home() {
         <b>{"Items"}</b>
       </Text>
       <SearchBar  />
+      {items.map((item) => <ItemSingle item={item} distance={distance} />)}
 
       {/* {loading ? (
         <Flex pt={24} align="center" justify="center">

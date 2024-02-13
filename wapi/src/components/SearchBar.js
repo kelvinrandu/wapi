@@ -38,7 +38,7 @@ const SearchBar = () => {
     <InputLeftElement pointerEvents='none'>
   <Search2Icon color='gray.300' />
 </InputLeftElement>
-    <Input type='tel' placeholder='write something here ...' />
+    <Input  placeholder='write something here ...' />
   </InputGroup>
     </Flex>
   );

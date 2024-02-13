@@ -18,26 +18,22 @@ import {
   MenuItem,
   MenuList,
   Badge,
+  Select,
 } from "@chakra-ui/react";
+
 import { FiMenu, FiChevronDown } from "react-icons/fi";
-// import { useUser } from "@auth0/nextjs-auth0";
-// import { GET_UNREAD_ORDERS_FOR_ME_QUERY } from "../../graphql/queries";
-// import { useQuery } from "@apollo/react-hooks";
-
-
 
 const MobileNav = ({ onOpen, ...rest }) => {
-//   const { user, error, isLoading } = useUser();
-//   const user_Id = user ? user.sub : [];
-//   const { data, loading } = useQuery(GET_UNREAD_ORDERS_FOR_ME_QUERY, {
-//     variables: { user_id: user_Id },
-//   });
+  //   const { user, error, isLoading } = useUser();
+  //   const user_Id = user ? user.sub : [];
+  //   const { data, loading } = useQuery(GET_UNREAD_ORDERS_FOR_ME_QUERY, {
+  //     variables: { user_id: user_Id },
+  //   });
 
- 
-//   const allOrders = data ? data.orders : [];
+  //   const allOrders = data ? data.orders : [];
 
-//   if (isLoading) return <div>Loading...</div>;
-//   if (error) return <div>{error.message}</div>;
+  //   if (isLoading) return <div>Loading...</div>;
+  //   if (error) return <div>{error.message}</div>;
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -67,41 +63,47 @@ const MobileNav = ({ onOpen, ...rest }) => {
       </Text>
 
       <HStack spacing={{ base: "0", md: "6" }}>
-        <Flex alignItems={"center"}>
-          <Menu>
-            <MenuButton
-              py={2}
-              transition="all 0.3s"
-              _focus={{ boxShadow: "none" }}
-            >
-              <HStack>
-
+        <Flex>
+          <Flex display={["flex", "flex", "flex"]} alignItems={"center"}>
+            <Select placeholder="all">
+              <option value="option1">near me</option>
+    
+            </Select>
+          </Flex>
+          <Flex display={["none", "none", "none"]} alignItems={"center"}>
+            <Menu>
+              <MenuButton
+                py={2}
+                transition="all 0.3s"
+                _focus={{ boxShadow: "none" }}
+              >
+                <HStack>
                   <Avatar size={"sm"} />
 
-                <VStack
-                  display={{ base: "none", md: "flex" }}
-                  alignItems="flex-start"
-                  spacing="1px"
-                  ml="2"
-                >
-                  {/* {user ? (
+                  <VStack
+                    display={{ base: "none", md: "flex" }}
+                    alignItems="flex-start"
+                    spacing="1px"
+                    ml="2"
+                  >
+                    {/* {user ? (
                     <Text fontSize="sm">{user.name}</Text>
                   ) : (
                     <Text fontSize="sm">annonymous</Text>
                   )} */}
-                     <Text fontSize="sm">annonymous</Text>
+                    <Text fontSize="sm">annonymous</Text>
 
-                  <Text fontSize="xs" color="gray.600">
-                    Wapi
-                  </Text>
-                </VStack>
-                <Box display={{ base: "none", md: "flex" }}>
-                  <FiChevronDown />
-                </Box>
-              </HStack>
-            </MenuButton>
-     
-          </Menu>
+                    <Text fontSize="xs" color="gray.600">
+                      Wapi
+                    </Text>
+                  </VStack>
+                  <Box display={{ base: "none", md: "flex" }}>
+                    <FiChevronDown />
+                  </Box>
+                </HStack>
+              </MenuButton>
+            </Menu>
+          </Flex>
         </Flex>
       </HStack>
     </Flex>

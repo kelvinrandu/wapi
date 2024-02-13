@@ -16,7 +16,7 @@ export default function Home() {
   // const {  search, onSearch } = useSearch();
   const items =[
     {name:'TRIBEEARTH',longitude:"39.583367066599514",latitude:"-4.294665222783007",phone:"",tags:""},
-    {name:'SALTY SQUID',longitude:"39.563438280120444",latitude:"-4.350683128915565",phone:"",tags:""},
+    {name:'SALTY SQUID',longitude:"39.563438280120444",latitude:"-4.350683128915565",phone:"",tags:{name:''}},
     // {name:'TRIBEEARTH',longitude:"",latitude:"",phone:"",tags:""},
     // {name:'TRIBEEARTH',longitude:"",latitude:"",phone:"",tags:""},
     // {name:'TRIBEEARTH',longitude:"",latitude:"",phone:"",tags:""},

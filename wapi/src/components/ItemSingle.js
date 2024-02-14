@@ -90,9 +90,9 @@ const ItemSingle = ({ item,key,distance}) => {
         )} */}
       </Flex>
       <HStack spacing={4}>
-  {['sm', 'sm', 'sm'].map((size) => (
-    <Tag size={'sm'} key={size} variant='solid' colorScheme='teal'>
-      Teal
+  {item?.tags?.map((tag,index) => (
+    <Tag size={'sm'} key={index} variant='solid' colorScheme='teal'>
+     {tag}
     </Tag>
   ))}
 </HStack>

@@ -193,6 +193,8 @@ if(selected?.value=='near'){
    console.log(',filt',filt)
    setFiltered(filt)
 
+}else{
+  setFiltered(items)
 }
  
         //add this below comment ↓ 

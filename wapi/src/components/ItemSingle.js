@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
-import { Collapse ,Badge} from "@chakra-ui/react";
-import { Box, Heading, Text, Flex, Spacer } from "@chakra-ui/layout";
+import { Collapse ,Badge,Tag} from "@chakra-ui/react";
+import { Box, Heading, Text, Flex, Spacer,HStack } from "@chakra-ui/layout";
 import { TriangleDownIcon, TriangleUpIcon, AtSignIcon } from "@chakra-ui/icons";
 // import ItemDetail from "../components/ItemDetail";
 // import EditItem from "../components/EditItem";
@@ -89,6 +89,13 @@ const ItemSingle = ({ item,key,distance}) => {
           </>
         )} */}
       </Flex>
+      <HStack spacing={4}>
+  {['sm', 'sm', 'sm'].map((size) => (
+    <Tag size={'sm'} key={size} variant='solid' colorScheme='teal'>
+      Teal
+    </Tag>
+  ))}
+</HStack>
 {/* 
       {itemDetail && (
         <Collapse in={itemDetail} animateOpacity style={{ zIndex: 10 }}>

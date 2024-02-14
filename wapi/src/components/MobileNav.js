@@ -67,6 +67,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
           <Flex display={["flex", "flex", "flex"]} alignItems={"center"}>
             <Select placeholder="all">
               <option value="option1">near me</option>
+            
     
             </Select>
           </Flex>

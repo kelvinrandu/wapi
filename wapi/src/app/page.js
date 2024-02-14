@@ -181,6 +181,7 @@ export default function Home() {
 
           
         })
+        console.log('longitude',navigator.geolocation)
     }
         	//add this below comment ↓ 
    // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -234,7 +235,7 @@ if(selected?.value=='near'){
     // <main className={styles.main}>
       <App setSelected={setSelected} selected={selected} options={options}>
               <Text mb={2} fontSize="sm">
-        {"Active "}
+        {"Diani"}
         <b>{"Items"}</b>
       </Text>
       <SearchBar  />

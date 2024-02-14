@@ -18,12 +18,17 @@ import {
   MenuItem,
   MenuList,
   Badge,
-  Select,
-} from "@chakra-ui/react";
 
+} from "@chakra-ui/react";
+import Select from "react-select"
 import { FiMenu, FiChevronDown } from "react-icons/fi";
 
-const MobileNav = ({ onOpen, ...rest }) => {
+const MobileNav = ({ onOpen,selected,setSelected,options }) => {
+  console.log('options',options)
+  const handleChange = (selectedOption) => {
+    setSelected(selectedOption)
+    console.log(`Option selected:`, selectedOption)
+  }
   //   const { user, error, isLoading } = useUser();
   //   const user_Id = user ? user.sub : [];
   //   const { data, loading } = useQuery(GET_UNREAD_ORDERS_FOR_ME_QUERY, {
@@ -44,7 +49,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
       borderBottomWidth="1px"
       borderBottomColor={useColorModeValue("gray.200", "gray.700")}
       justifyContent={{ base: "space-between", md: "flex-end" }}
-      {...rest}
+      // {...rest}
     >
       <IconButton
         display={{ base: "flex", md: "none" }}
@@ -65,11 +70,11 @@ const MobileNav = ({ onOpen, ...rest }) => {
       <HStack spacing={{ base: "0", md: "6" }}>
         <Flex>
           <Flex display={["flex", "flex", "flex"]} alignItems={"center"}>
-            <Select placeholder="all">
-              <option value="option1">near me</option>
+            <Select onChange={handleChange} value={selected} options={options} />
+            
             
     
-            </Select>
+        
           </Flex>
           <Flex display={["none", "none", "none"]} alignItems={"center"}>
             <Menu>

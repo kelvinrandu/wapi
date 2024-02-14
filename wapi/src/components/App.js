@@ -11,8 +11,14 @@ import SidebarContent from "./SidebarContent";
 import MobileNav from "./MobileNav";
 
 
-  const App = ({children}) => {
+  const App = ({children,setSelected,selected,options}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleChange = (selectedOption) => {
+    setSelected(selectedOption)
+    console.log(`Option selected:`, selectedOption)
+  }
+  console.log('otions1',options)
 
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
@@ -34,7 +40,7 @@ import MobileNav from "./MobileNav";
         </DrawerContent>
       </Drawer>
       {/* mobilenav */}
-      <MobileNav onOpen={onOpen} />
+      <MobileNav setSelected={setSelected} selected={selected} options={options} onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
       </Box>

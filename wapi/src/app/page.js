@@ -236,7 +236,7 @@ if(selected?.value=='near'){
       <App setSelected={setSelected} selected={selected} options={options}>
               <Text mb={2} fontSize="sm">
         {"Diani"}
-        <b>{"Items"}</b>
+        {/* <b>{"Items"}</b> */}
       </Text>
       <SearchBar  />
       {filtered.map((item,key) => <ItemSingle item={item} key={key} distance={distance} />)}

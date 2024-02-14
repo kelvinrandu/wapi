@@ -11,6 +11,9 @@ const Filters = (props) => {
   const [checkedItems1, setCheckedItems1] = useState(false)
   const [checkedItems2, setCheckedItems2] = useState(false)
   const [checkedItems3, setCheckedItems3] = useState( false)
+  const [checkedItem1, setCheckedItem1] = useState(false)
+  const [checkedItem2, setCheckedItem2] = useState(false)
+  const [checkedItem3, setCheckedItem3] = useState( false)
   const handleselect = (e) =>{
     return 'here';
     }
@@ -66,6 +69,75 @@ const isIndeterminate = checkedItems2 || checkedItems3 && !checkedItems1
           }
         >
           International
+        </Checkbox>
+      </Stack>
+
+          {/* {loading ? (
+            <Flex pt={24} align="center" justify="center">
+              <Spinner
+                size="xl"
+                label="
+              Loading items"
+              />
+            </Flex>
+          ) : (
+            <>
+              <Flex direction="column">
+                <CheckboxGroup
+                  spacing={2}
+                  variantColor="teal"
+                  onChange={onFilterCategoryType}
+                  defaultValue={[
+                    "food",
+                    "hardware",
+                    "textile",
+                    "electronics",
+                    "drinks",
+                  ]}
+                  value={categoryFilter}
+                >
+          
+                   <Text>no categories</Text>
+                </CheckboxGroup>
+              </Flex>
+            </>
+          )} */}
+           {/* <Text>no categories</Text> */}
+        </Box>
+        <Box>
+          <Text mb={2} fontWeight="bold">
+            {"Locations"}
+          </Text>
+          <Checkbox
+        isChecked={checkedItem1}
+        // isIndeterminate={isIndeterminate}
+        onChange={(e) =>{ 
+   
+          setCheckedItem1([e.target.checked])
+      
+        }}
+      >
+        Diani
+      </Checkbox>
+      <Stack pl={6} mt={1} spacing={1}>
+        <Checkbox
+          isChecked={checkedItem2}
+          onChange={(e) =>{ 
+            setCheckedItem2(e.target.checked)
+            setCheckedItem3(!e.target.checked)}
+          }
+        >
+          Ukunda
+        </Checkbox>
+        <Checkbox
+          isChecked={checkedItem3}
+          onChange={(e) => {
+            setCheckedItem3(e.target.checked)
+            setCheckedItem2(!e.target.checked)
+          }
+          }
+        >
+          Galu
         </Checkbox>
       </Stack>
 

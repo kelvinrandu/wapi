@@ -60,7 +60,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         </NavItem>
       ))} */}
 
-      <Filters />
+      {/* <Filters /> */}
       {/* <AddItemModal /> */}
     </Box>
   );

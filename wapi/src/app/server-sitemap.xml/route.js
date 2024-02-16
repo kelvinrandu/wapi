@@ -14,7 +14,15 @@ function generateSiteMap(_items,_categories) {
      <url>
        <loc>${URL}/products</loc>
      </url>
-
+     ${_items
+        .map(({ longitude }) => {
+          return `
+            <url>
+                <loc>${`${URL}/product/${longitude}`}</loc>
+            </url>
+          `;
+        })
+        .join("")}
        ${_categories
         .map(({ name }) => {
           return `

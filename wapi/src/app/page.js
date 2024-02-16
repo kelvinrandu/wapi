@@ -136,10 +136,10 @@ export default function Home() {
   const [_longitude, setLongitude ]= useState();
   const [selected, setSelected] = useState(options[0])
   const [filtered, setFiltered] = useState(items)
+
   const nearby = (lat1, lon1, lat2, lon2, unit) => {
-  if (lat1 == lat2 && lon1 == lon2) {
-    return 0;
-  } else {
+
+     console.log('nearby',lat1, lon1, lat2, lon2, unit)
     var radlat1 = (Math.PI * lat1) / 180;
     var radlat2 = (Math.PI * lat2) / 180;
     var theta = lon1 - lon2;
@@ -158,8 +158,7 @@ export default function Home() {
     }
     // if (unit=="N") { dist = dist * 0.8684 }
     return dist<0.5 ? true: false;
-  }
-};
+  };
   const matchesSearch = (item) =>{
   return nearby(_latitude,_longitude,item?.latitude,item?.longitude,"K");
   }
@@ -182,29 +181,33 @@ export default function Home() {
 
 //   };
 
-//   useEffect(() => {
+  useEffect(() => {
 
-//     if('geolocation' in navigator) {
-//         // Retrieve latitude & longitude coordinates from `navigator.geolocation` Web API
-//         navigator.geolocation.getCurrentPosition(({ coords }) => {
-//             const { latitude, longitude } = coords;
-//             setLatitude1(latitude)
-//             setLongitude(longitude)
-//             distance(_latitude,_longitude,-4.294665222783007, 39.583367066599514,"k")
+    if('geolocation' in navigator) {
+        // Retrieve latitude & longitude coordinates from `navigator.geolocation` Web API
+        navigator.geolocation.getCurrentPosition(({ coords }) => {
+            const { latitude, longitude } = coords;
+            setLatitude1(latitude)
+            setLongitude(longitude)
+          
 
           
-//         })
-//         console.log('longitude',navigator.geolocation)
-//     }
-//         	//add this below comment ↓ 
-//    // eslint-disable-next-line react-hooks/exhaustive-deps
-// }, []);
+        })
+        console.log('longitude',navigator.geolocation)
+    }
+        	//add this below comment ↓ 
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
 console.log('select',selected)
 
 useEffect(() => {
   console.log('nea valuer',selected?.value)
 if(selected?.value=='near'){
+
+
+const _items = items.filter(matchesSearch);
+console.log('items',_items)
   var filt=(items
     .filter(matchesSearch))
    console.log(',filt',filt)

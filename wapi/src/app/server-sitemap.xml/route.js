@@ -10,15 +10,25 @@ function generateSiteMap(_items,_categories) {
      <!--Wapiii sitemap-->
      <url>
        <loc>${URL}</loc>
+       
+       <lastmod> ${new Date()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>1</priority>
      </url>
      <url>
        <loc>${URL}/products</loc>
+       <lastmod> ${new Date()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
      </url>
      ${_items
         .map(({ id }) => {
           return `
             <url>
                 <loc>${`${URL}/product/${id}`}</loc>
+                <lastmod> ${new Date()}</lastmod>
+                <changefreq>monthly</changefreq>
+                <priority>0.8</priority>
             </url>
           `;
         })
@@ -28,6 +38,9 @@ function generateSiteMap(_items,_categories) {
           return `
             <url>
                 <loc>${`${URL}/landing/${id}`}</loc>
+                <lastmod> ${new Date()}</lastmod>
+                <changefreq>monthly</changefreq>
+                <priority>0.8</priority>
             </url>
           `;
         })
@@ -37,6 +50,9 @@ function generateSiteMap(_items,_categories) {
               return `
                 <url>
                     <loc>${`${URL}/category/${id}`}</loc>
+                    <lastmod> ${new Date()}</lastmod>
+                    <changefreq>monthly</changefreq>
+                    <priority>0.5</priority>
                 </url>
               `;
             })

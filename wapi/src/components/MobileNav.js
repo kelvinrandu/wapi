@@ -27,7 +27,7 @@ const MobileNav = ({ onOpen,selected,setSelected,options }) => {
   console.log('options',options)
   const handleChange = (selectedOption) => {
     setSelected(selectedOption)
-    console.log(`Option selected:`, selectedOption)
+    // console.log(`Option selected:`, selectedOption)
   }
   //   const { user, error, isLoading } = useUser();
   //   const user_Id = user ? user.sub : [];
@@ -70,7 +70,7 @@ const MobileNav = ({ onOpen,selected,setSelected,options }) => {
       <HStack spacing={{ base: "0", md: "6" }}>
         <Flex>
           <Flex display={["flex", "flex", "flex"]} alignItems={"center"}>
-            <Select onChange={handleChange} value={selected} options={options} />
+            <Select onChange={(event)=>handleChange(event)} value={selected} options={options} />
             
             
     

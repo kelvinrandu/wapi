@@ -169,23 +169,39 @@ export default function Home() {
   // .filter(matchesAlcoholType);
   // const {  search, onSearch } = useSearch();
 
-  useEffect(() => {
+//   const incrementViews = () => {
+//     if(selected?.value=='near'){
+//       var filt=(items
+//         .filter(matchesSearch))
+//        console.log(',filt',filt)
+//        setFiltered(filt)
+    
+//     }else{
+//       setFiltered(items)
+//     }
 
-    if('geolocation' in navigator) {
-        // Retrieve latitude & longitude coordinates from `navigator.geolocation` Web API
-        navigator.geolocation.getCurrentPosition(({ coords }) => {
-            const { latitude, longitude } = coords;
-            setLatitude1(latitude)
-            setLongitude(longitude)
-            distance(_latitude,_longitude,-4.294665222783007, 39.583367066599514,"k")
+//   };
+
+//   useEffect(() => {
+
+//     if('geolocation' in navigator) {
+//         // Retrieve latitude & longitude coordinates from `navigator.geolocation` Web API
+//         navigator.geolocation.getCurrentPosition(({ coords }) => {
+//             const { latitude, longitude } = coords;
+//             setLatitude1(latitude)
+//             setLongitude(longitude)
+//             distance(_latitude,_longitude,-4.294665222783007, 39.583367066599514,"k")
 
           
-        })
-        console.log('longitude',navigator.geolocation)
-    }
-        	//add this below comment ↓ 
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-}, []);
+//         })
+//         console.log('longitude',navigator.geolocation)
+//     }
+//         	//add this below comment ↓ 
+//    // eslint-disable-next-line react-hooks/exhaustive-deps
+// }, []);
+
+console.log('select',selected)
+
 useEffect(() => {
   console.log('nea valuer',selected?.value)
 if(selected?.value=='near'){
@@ -200,9 +216,7 @@ if(selected?.value=='near'){
  
         //add this below comment ↓ 
  // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [selected,filtered]);
-
-
+}, [selected]);
 
 
   const distance = (lat1, lon1, lat2, lon2, unit) => {

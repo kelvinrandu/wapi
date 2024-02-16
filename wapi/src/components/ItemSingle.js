@@ -44,7 +44,7 @@ const ItemSingle = ({ item,key,distance}) => {
         transform: "translateY(-3px)",
         boxShadow: "dark-lg",
       }}
-      key={key}
+      // key={key}
       borderWidth="1px"
       borderRadius={8}
       mb={2}

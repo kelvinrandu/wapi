@@ -1,13 +1,13 @@
 "use client";
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 import { useState, useEffect } from "react";
 
 import App from "@/components/App";
 import ItemSingle from "@/components/ItemSingle";
 import SearchBar from "@/components/SearchBar";
 import { Text, Flex, Spinner } from "@chakra-ui/react";
-import { useSearch } from "../utils/search";
+import { useSearch } from "../../utils/search";
 
 const items = [
   {
@@ -844,37 +844,37 @@ export default function Home() {
     return nearby(_latitude, _longitude, item?.latitude, item?.longitude, "K");
   };
 
-  // useEffect(() => {
-  //   if ("geolocation" in navigator) {
-  //     // Retrieve latitude & longitude coordinates from `navigator.geolocation` Web API
-  //     navigator.geolocation.getCurrentPosition(({ coords }) => {
-  //       const { latitude, longitude } = coords;
-  //       setLatitude1(latitude);
-  //       setLongitude(longitude);
-  //     });
-  //     console.log("longitude", navigator.geolocation);
-  //   }
-  //   //add this below comment ↓
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+  useEffect(() => {
+    if ("geolocation" in navigator) {
+      // Retrieve latitude & longitude coordinates from `navigator.geolocation` Web API
+      navigator.geolocation.getCurrentPosition(({ coords }) => {
+        const { latitude, longitude } = coords;
+        setLatitude1(latitude);
+        setLongitude(longitude);
+      });
+      console.log("longitude", navigator.geolocation);
+    }
+    //add this below comment ↓
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  // console.log("select", selected);
+  console.log("select", selected);
 
-  // useEffect(() => {
-  //   console.log("nea valuer", selected?.value);
-  //   if (selected?.value == "near") {
-  //     const _items = items.filter(matchesSearch);
-  //     console.log("items", _items);
-  //     var filt = items.filter(matchesSearch);
-  //     console.log(",filt", filt);
-  //     setFiltered(filt);
-  //   } else {
-  //     setFiltered(items);
-  //   }
+  useEffect(() => {
+    console.log("nea valuer", selected?.value);
+    if (selected?.value == "near") {
+      const _items = items.filter(matchesSearch);
+      console.log("items", _items);
+      var filt = items.filter(matchesSearch);
+      console.log(",filt", filt);
+      setFiltered(filt);
+    } else {
+      setFiltered(items);
+    }
 
-  //   //add this below comment ↓
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [selected]);
+    //add this below comment ↓
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selected]);
 
   const distance = (lat1, lon1, lat2, lon2, unit) => {
     if (lat1 == lat2 && lon1 == lon2) {
@@ -904,10 +904,12 @@ export default function Home() {
   return (
     <App setSelected={setSelected} selected={selected} options={options}>
       <Text mb={2} fontSize="sm">
-        {"Landing page"}
-     
+        {"Diani"}
       </Text>
-
+      <SearchBar />
+      {filtered.map((item, key) => (
+        <ItemSingle item={item} key={key} distance={distance} />
+      ))}
     </App>
   );
 }

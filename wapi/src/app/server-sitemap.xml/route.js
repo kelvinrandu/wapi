@@ -32,6 +32,15 @@ function generateSiteMap(_items,_categories) {
           `;
         })
         .join("")}
+        ${_categories
+            .map(({ name }) => {
+              return `
+                <url>
+                    <loc>${`${URL}/category/${name}`}</loc>
+                </url>
+              `;
+            })
+            .join("")}
    </urlset>
  `;
 }

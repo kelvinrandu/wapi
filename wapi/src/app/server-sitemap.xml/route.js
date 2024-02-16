@@ -15,15 +15,6 @@ function generateSiteMap(_items,_categories) {
        <loc>${URL}/products</loc>
      </url>
 
-     ${_items
-       .map(({ name }) => {
-         return `
-           <url>
-               <loc>${`${URL}/product/${name}`}</loc>
-           </url>
-         `;
-       })
-       .join("")}
        ${_categories
         .map(({ name }) => {
           return `

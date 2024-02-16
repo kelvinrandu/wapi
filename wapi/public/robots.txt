@@ -7,3 +7,4 @@ Host: https://www.wapi.ke
 
 # Sitemaps
 Sitemap: https://www.wapi.ke/sitemap.xml
+Sitemap: http://localhost:3000/server-sitemap.xml

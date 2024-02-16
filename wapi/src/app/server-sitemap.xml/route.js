@@ -15,28 +15,28 @@ function generateSiteMap(_items,_categories) {
        <loc>${URL}/products</loc>
      </url>
      ${_items
-        .map(({ longitude }) => {
+        .map(({ id }) => {
           return `
             <url>
-                <loc>${`${URL}/product/${longitude}`}</loc>
+                <loc>${`${URL}/product/${id}`}</loc>
             </url>
           `;
         })
         .join("")}
        ${_categories
-        .map(({ name }) => {
+        .map(({ id }) => {
           return `
             <url>
-                <loc>${`${URL}/landing/${name}`}</loc>
+                <loc>${`${URL}/landing/${id}`}</loc>
             </url>
           `;
         })
         .join("")}
         ${_categories
-            .map(({ name }) => {
+            .map(({ id }) => {
               return `
                 <url>
-                    <loc>${`${URL}/category/${name}`}</loc>
+                    <loc>${`${URL}/category/${id}`}</loc>
                 </url>
               `;
             })

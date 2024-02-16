@@ -1,5 +1,6 @@
 export const items = [
-    {
+    { 
+      id:1,
       name: "TRIBEEARTH",
       longitude: "39.583367066599514",
       latitude: "-4.294665222783007",
@@ -8,6 +9,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:2,
       name: "SALTY SQUID",
       longitude: "39.563438280120444",
       latitude: "-4.350683128915565",
@@ -16,6 +18,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:3,
       name: "SAILS BEACH BAR & RESTAURANT",
       longitude: "39.562976940151174",
       latitude: "-4.352362700456087",
@@ -24,6 +27,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:4,
       name: "BLUE MARLIN RESTAURANT",
       longitude: "39.56326661873653",
       latitude: "-4.3500412534520985",
@@ -32,6 +36,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:5,
       name: "SOUL BREEZE BEACH BAR AND RESTAURANT",
       longitude: "39.563438280120444",
       latitude: "-4.3657988277469855",
@@ -40,6 +45,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:6,
       name: "PALLET CAFÉ",
       longitude: "39.556100237793544",
       latitude: "-4.373016329181328",
@@ -48,6 +54,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:7,
       name: "SUNDOWNER RESTAURANT",
       longitude: "39.561287566629915",
       latitude: "-4.347790722137382",
@@ -56,6 +63,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:8,
       name: "GOLDEN KARAFUU",
       longitude: "39.59509430666875",
       latitude: "-4.269499592008569",
@@ -64,6 +72,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:9,
       name: "CASAMIA",
       longitude: "39.57525253142281",
       latitude: "-4.310525330618609",
@@ -71,7 +80,7 @@ export const items = [
       category: ["restaurants", "international"],
       tags: ["restaurants", "international"],
     },
-    {
+    {id:10,
       name: "ALI BARBOUR CAVE",
       longitude: "39.563438280120444",
       latitude: "-4.350683128915565",
@@ -81,6 +90,7 @@ export const items = [
     },
   
     {
+      id:11,
       name: "APERO",
       longitude: "39.563438280120444",
       latitude: "-4.350683128915565",
@@ -89,6 +99,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:12,
       name: "AMIGOS",
       longitude: "39.563438280120444",
       latitude: "-4.350683128915565",
@@ -97,6 +108,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:13,
       name: "HAVANA",
       longitude: "39.563438280120444",
       latitude: "-4.350683128915565",
@@ -105,6 +117,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:14,
       name: "JOLLY PIZZERIA",
       longitude: "39.563438280120444",
       latitude: "-4.350683128915565",
@@ -113,6 +126,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:15,
       name: "TIKI BAR",
       longitude: "39.563438280120444",
       latitude: "-4.350683128915565",
@@ -121,6 +135,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:16,
       name: "ANCHOR",
       longitude: "39.563438280120444",
       latitude: "-4.350683128915565",
@@ -129,6 +144,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:17,
       name: "PIRIE PIRIES",
       longitude: "39.563438280120444",
       latitude: "-4.350683128915565",
@@ -137,6 +153,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:18,
       name: "COAST DISHES",
       longitude: "39.563438280120444",
       latitude: "-4.350683128915565",
@@ -145,6 +162,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:19,
       name: "CHOCOS RESTAURANT",
       longitude: "39.563438280120444",
       latitude: "-4.350683128915565",
@@ -153,6 +171,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:20,
       name: "OASIS BEACH BAR AND RESTAURANTS",
       longitude: "39.59726848389023",
       latitude: "-4.271700475986705",
@@ -162,6 +181,7 @@ export const items = [
     },
   
     {
+      id:21,
       name: "SIZZLERS STEAK HOIUSE",
       longitude: "39.582623029917464",
       latitude: "-4.2956598863568365",
@@ -170,6 +190,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:22,
       name: "LEONARDOS",
       longitude: "39.58700039484341",
       latitude: "-4.2867585189546125",
@@ -178,6 +199,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:23,
       name: "COLOBUS SHADE",
       longitude: "39.56589511457505",
       latitude: "-4.342085653197827",
@@ -186,6 +208,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:24,
       name: "SIR WILLIAM GRILLED SEA FOOD",
       longitude: "39.56366351676967",
       latitude: "-4.341700523593282",
@@ -194,6 +217,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:25,
       name: "QUA BRUCE",
       longitude: "39.58599652252059",
       latitude: "-4.288595784681062",
@@ -202,6 +226,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:26,
       name: "MOMMAS BAR AND RESTAURANT",
       longitude: "39.55871554525988",
       latitude: "-4.322037124332487",
@@ -210,6 +235,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:27,
       name: "SHAN E PUNJAB",
       longitude: "39.59055795320543",
       latitude: "-4.277723491062076",
@@ -218,6 +244,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:28,
       name: "CHINESE RESTAURANT DIANI",
       longitude: "39.591201683341595",
       latitude: "-4.277038758111893",
@@ -226,6 +253,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:29,
       name: "KITAMU RESTAURANT",
       longitude: "39.59480657210415",
       latitude: "-4.278750589339641",
@@ -234,6 +262,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:30,
       name: "HIGGINS RESTAURANT",
       longitude: "39.5938205450686",
       latitude: "-4.27161425704595",
@@ -243,6 +272,7 @@ export const items = [
     },
   
     {
+      id:31,
       name: "KARAFUU UKUNDA",
       longitude: "39.56726476854782",
       latitude: "-4.281024086142147",
@@ -251,6 +281,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:32,
       name: "EDDIES LOUNGE",
       longitude: "39.566921445808546",
       latitude: "-4.281195268546146",
@@ -259,6 +290,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:33,
       name: "COLLINS RECEIPE FAST FOOD",
       longitude: "39.568552228820174",
       latitude: "-4.281409246497301",
@@ -266,7 +298,7 @@ export const items = [
       category: ["restaurants", "local"],
       tags: ["restaurants", "local"],
     },
-    {
+    {id:34,
       name: "BABA BURGERS",
       longitude: "39.57056924991351",
       latitude: "-4.2829070904801085",
@@ -275,6 +307,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:35,
       name: "CHICKEN REPUBLIC JOINT",
       longitude: "39.56816599073848",
       latitude: "-4.2765733302045765",
@@ -283,6 +316,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:36,
       name: "EIGHTYS RESTAURANT ",
       longitude: "39.57503244552428",
       latitude: "-4.284447726945901",
@@ -291,6 +325,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:37,
       name: "SWAHILI POT",
       longitude: "39.57296354240813",
       latitude: "-4.2844538006927975",
@@ -299,6 +334,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:38,
       name: "PIZZERIA DA ANIELLO",
       longitude: "39.58656189806032",
       latitude: "-4.288285958987057",
@@ -307,6 +343,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:39,
       name: "HOUSE OF WOOD FIRE",
       longitude: "39.57566711495873",
       latitude: "-4.299660255870641",
@@ -315,6 +352,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:40,
       name: "DOUBLE FIFTEEN",
       longitude: "39.594161241945116",
       latitude: "-4.270906849016334",
@@ -323,6 +361,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:41,
       name: "JAVA HOUSE",
       longitude: "39.58552983030114",
       latitude: "-4.290233952918005",
@@ -332,6 +371,7 @@ export const items = [
     },
   
     {
+      id:42,
       name: "AFRICAN POT",
       longitude: "39.57308781495875",
       latitude: "-4.284413944806142",
@@ -340,6 +380,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:43,
       name: "BUNNYS FAST FOOD",
       longitude: "39.57570565084583",
       latitude: "-4.28387900191689",
@@ -348,6 +389,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:44,
       name: "TROPICAL RESTAURANT",
       longitude: "39.55422064194511",
       latitude: "-4.304026364094802",
@@ -356,6 +398,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:45,
       name: "PANORAMA RESTAURANT",
       longitude: "39.56596641495873",
       latitude: "-4.2867319484399555",
@@ -364,6 +407,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:46,
       name: "CHILL SPOT",
       longitude: "39.584445223310766",
       latitude: "-4.299506449876768",
@@ -372,6 +416,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:47,
       name: "MIAMI RESTAURANT",
       longitude: "39.568335857287515",
       latitude: "-4.2755042399499725",
@@ -380,6 +425,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:48,
       name: "ASINS RESTAURANT",
       longitude: "39.593781284273916",
       latitude: "-4.2720577478733945",
@@ -388,6 +434,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:49,
       name: "MOIZ SWAHILI DISHES",
       longitude: "39.58304785728753",
       latitude: "-4.288840256937211",
@@ -396,6 +443,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:50,
       name: "ONE DAY SOMEWHERE",
       longitude: "39.58156727797434",
       latitude: "-4.288155533936566",
@@ -404,6 +452,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:51,
       name: "LIONS CAGE RESTAURANT",
       longitude: " 39.56743875728752",
       latitude: "-4.276883246982785",
@@ -412,6 +461,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:52,
       name: "MUMS CHOICE RESTAURANT",
       longitude: "39.5669237731786",
       latitude: "-4.279600777824325",
@@ -420,6 +470,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:53,
       name: "SHANGAZI DISHES",
       longitude: "39.559236768931505",
       latitude: "-4.3009156538268725",
@@ -428,6 +479,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:54,
       name: "GALAXY DIANI RESTAURANT",
       longitude: "39.59129774564356",
       latitude: "-4.277165740854807",
@@ -436,6 +488,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:55,
       name: "COPA CABANA",
       longitude: "39.59608280632241",
       latitude: "-4.275090140704699",
@@ -445,6 +498,7 @@ export const items = [
     },
   
     {
+      id:56,
       name: "NOMAD BEACH BAR AND RESTAURANT",
       longitude: "39.572623568931505",
       latitude: "-4.3265375818588225",
@@ -453,6 +507,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:57,
       name: "SPEEDY BISTRO",
       longitude: "39.581706241945106",
       latitude: "-4.303272757950962",
@@ -461,6 +516,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:58,
       name: "J.JS BAR AND RESTAURANT",
       longitude: "39.563268257287525",
       latitude: "-4.298206365801642",
@@ -469,6 +525,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:59,
       name: "MWAEPE RESTAURANT",
       longitude: "39.565830299616316",
       latitude: "-4.342426396368622",
@@ -477,6 +534,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:60,
       name: "CHEZ NADINE RESTAURANT",
       longitude: "39.57450704194512",
       latitude: "-4.284678051885852",
@@ -485,6 +543,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:61,
       name: "ROCKSTARZ",
       longitude: "39.57691030112015",
       latitude: "-4.285598152462292",
@@ -494,6 +553,7 @@ export const items = [
     },
   
     {
+      id:62,
       name: "CARNEVAL ROOFTOP RESTAURANT",
       longitude: "39.58242978427391",
       latitude: "-4.295790456267318",
@@ -502,6 +562,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:63,
       name: "BB2",
       longitude: "39.57364334564355",
       latitude: "-4.31548426499606",
@@ -511,6 +572,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:64,
       name: "RAINBOW RESTAURANT",
       longitude: "39.56571679057348",
       latitude: "-4.286771434481866",
@@ -519,6 +581,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:65,
       name: "KAYA RESTAURANT",
       longitude: "39.56322770071363",
       latitude: "-4.29357585437018",
@@ -527,6 +590,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:66,
       name: "TSUNAMI GARDENS",
       longitude: "39.564300584273916",
       latitude: "-4.291093745963157",
@@ -535,6 +599,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:67,
       name: "PIZZA INN",
       longitude: "39.566047257287536",
       latitude: "-4.280363742597344",
@@ -543,6 +608,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:68,
       name: "MWAWANI RESTAURANT",
       longitude: "39.56688410646455",
       latitude: "-4.2813052461578165",
@@ -551,6 +617,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:69,
       name: "ELITE PUB AND RESTAURANT",
       longitude: "39.570939606322405",
       latitude: "-4.283573409069707",
@@ -559,6 +626,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:70,
       name: "CLUB LIQUID",
       longitude: "39.56819302440809",
       latitude: "-4.275699003335376",
@@ -567,6 +635,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:71,
       name: "LA GUSTA",
       longitude: "39.57796055728752",
       latitude: "-4.315108761613289",
@@ -576,6 +645,7 @@ export const items = [
     },
   
     {
+      id:72,
       name: "PI STEAKS",
       longitude: "39.55303549961633",
       latitude: "-4.309233355387121",
@@ -584,6 +654,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:73,
       name: "THE K KOREAN",
       longitude: "39.578436184273905",
       latitude: "-4.306218562564789",
@@ -592,6 +663,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:74,
       name: "KOKKOS BISTRO",
       longitude: "39.57820014989064",
       latitude: "-4.307095843014619",
@@ -600,6 +672,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:75,
       name: "CAPE OF GOOD HOPE RESTAURANT",
       longitude: "39.58248395728753",
       latitude: "-4.28882854478913",
@@ -608,6 +681,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:76,
       name: "MADINI RESTAURANT",
       longitude: "39.57482598427391",
       latitude: "-4.300272167222669",
@@ -616,6 +690,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:77,
       name: "SHIRO PORK CENTER",
       longitude: "39.59343275728752",
       latitude: "-4.273304652719271",
@@ -624,6 +699,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:78,
       name: "PAPAYA BEACH BAR AND RESTAURANT",
       longitude: "39.59542832070965",
       latitude: "-4.276428757055318",
@@ -632,6 +708,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:79,
       name: "BANDARINI RESTAURANT",
       longitude: "39.581870026602694",
       latitude: "-4.3033469665018025",
@@ -641,6 +718,8 @@ export const items = [
     },
   
     {
+     
+      id:81,
       name: "TANGEZI SEA FOOD RESTAURANT",
       longitude: "39.56871454194512",
       latitude: "-4.337892581785989",
@@ -649,6 +728,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:82,
       name: "IKRAM SEA FOOD",
       longitude: "39.566048414958736",
       latitude: "-4.293225652169498",
@@ -658,6 +738,7 @@ export const items = [
     },
   
     {
+      id:83,
       name: "ESTUARY RESTAURANT",
       longitude: "39.5977040419451",
       latitude: "-4.259212137502914",
@@ -666,6 +747,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:84,
       name: "DIANIS FINEST HANGOUT",
       longitude: "39.56672101495874",
       latitude: "-4.2872803535247295",
@@ -674,6 +756,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:85,
       name: "JIKUKU",
       longitude: "39.57400113030114",
       latitude: "-4.289207952300036",
@@ -682,6 +765,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:86,
       name: "MEAT PLACE",
       longitude: "39.56650074194512",
       latitude: "-4.2803573513591715",
@@ -691,6 +775,7 @@ export const items = [
     },
   
     {
+      id:87,
       name: "CHICKEN INN",
       longitude: "39.56585701180896",
       latitude: "-4.280207566593799",
@@ -699,6 +784,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:88,
       name: "AL YASMIN RESTAURANT SWAHILI",
       longitude: "39.56849630536725",
       latitude: "-4.281876595180125",
@@ -707,6 +793,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:89,
       name: "MWIKO INN",
       longitude: "39.569998342351646",
       latitude: "-4.282818096879427",
@@ -715,6 +802,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:90,
       name: "NEW DODOMA RESTAURANT",
       longitude: "39.565814096466546",
       latitude: "-4.284187551828252",
@@ -723,6 +811,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:91,
       name: "HIOLLYWOOD SPEISERESTAURANT",
       longitude: "39.56589992715137",
       latitude: "-4.286412910890007",
@@ -731,6 +820,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:92,
       name: "VICTORIOUS RESTAURANT",
       longitude: "39.56643636893151",
       latitude: "-4.286006355391131",
@@ -740,6 +830,7 @@ export const items = [
     },
   
     {
+      id:93,
       name: "HUSNA SWAHILI FOOD",
       longitude: "39.582013230301136",
       latitude: "-4.298185955022138",
@@ -748,6 +839,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:94,
       name: "CHUI GRILL",
       longitude: "39.59124328701717",
       latitude: "-4.283507392005464",
@@ -757,6 +849,7 @@ export const items = [
     },
   
     {
+      id:95,
       name: "FUNKY MONKEY",
       longitude: "39.578542466599494",
       latitude: "-4.306222526179475",
@@ -765,6 +858,7 @@ export const items = [
       tags: ["restaurants", "international"],
     },
     {
+      id:96,
       name: "OCTO CAFÉ",
       longitude: "39.57680498631497",
       latitude: "-4.308123501099578",
@@ -773,6 +867,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:97,
       name: "PIZZA CORNER",
       longitude: "39.57349975747937",
       latitude: "-4.317735986351276",
@@ -781,6 +876,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:98,
       name: "MVURENI FISHERMANS INN",
       longitude: "39.56222236660027",
       latitude: "-4.358650176329024",
@@ -789,6 +885,7 @@ export const items = [
       tags: ["restaurants", "local"],
     },
     {
+      id:99,
       name: "SHASHINKA",
       longitude: "39.578189",
       latitude: "-4.306546611118894",
@@ -798,4 +895,4 @@ export const items = [
     },
   ];
 
-  export const categories =[{name:"restaurants"}]
+  export const categories =[{   id:1,name:"restaurants"}]

@@ -6,7 +6,15 @@ import { useState, useEffect } from "react";
 import App from "@/components/App";
 import ItemSingle from "@/components/ItemSingle";
 import SearchBar from "@/components/SearchBar";
-import { Text, Flex, Spinner, Box,Center,Button ,Input} from "@chakra-ui/react";
+import {
+  Text,
+  Flex,
+  Spinner,
+  Box,
+  Center,
+  Button,
+  Input,
+} from "@chakra-ui/react";
 import { useSearch } from "../utils/search";
 
 const items = [
@@ -819,59 +827,13 @@ export default function Home() {
   const [selected, setSelected] = useState(options[0]);
   const [filtered, setFiltered] = useState(items);
 
-  const nearby = (lat1, lon1, lat2, lon2, unit) => {
-    console.log("nearby", lat1, lon1, lat2, lon2, unit);
-    var radlat1 = (Math.PI * lat1) / 180;
-    var radlat2 = (Math.PI * lat2) / 180;
-    var theta = lon1 - lon2;
-    var radtheta = (Math.PI * theta) / 180;
-    var dist =
-      Math.sin(radlat1) * Math.sin(radlat2) +
-      Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-    if (dist > 1) {
-      dist = 1;
-    }
-    dist = Math.acos(dist);
-    dist = (dist * 180) / Math.PI;
-    dist = dist * 60 * 1.1515;
-    if (unit == "K") {
-      dist = dist * 1.609344;
-    }
-    // if (unit=="N") { dist = dist * 0.8684 }
-    return dist < 0.5 ? true : false;
-  };
-  const matchesSearch = (item) => {
-    return nearby(_latitude, _longitude, item?.latitude, item?.longitude, "K");
-  };
-
-  const distance = (lat1, lon1, lat2, lon2, unit) => {
-    if (lat1 == lat2 && lon1 == lon2) {
-      return 0;
-    } else {
-      var radlat1 = (Math.PI * lat1) / 180;
-      var radlat2 = (Math.PI * lat2) / 180;
-      var theta = lon1 - lon2;
-      var radtheta = (Math.PI * theta) / 180;
-      var dist =
-        Math.sin(radlat1) * Math.sin(radlat2) +
-        Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-      if (dist > 1) {
-        dist = 1;
-      }
-      dist = Math.acos(dist);
-      dist = (dist * 180) / Math.PI;
-      dist = dist * 60 * 1.1515;
-      if (unit == "K") {
-        dist = dist * 1.609344;
-      }
-      // if (unit=="N") { dist = dist * 0.8684 }
-      return dist < 0.5 ? "nearby" : Math.round(dist) + " km";
-    }
-  };
-
   return (
     <App setSelected={setSelected} selected={selected} options={options}>
-      <Box p={0}  backgroundColor={"#DCF9FF"}>
+      <Box
+        display={{ base: "grid", md: "none" }}
+        p={0}
+        backgroundColor={"#DCF9FF"}
+      >
         <Image
           src="/Background.png"
           width={1024}
@@ -879,38 +841,1031 @@ export default function Home() {
           alt="Picture of the author"
         />
 
-        <Box   width={'100%'} display={'grid'} mt={'2px'}>
-          <Center p={4} width={'100%'} >
-          <Box width={'100%'} p={0}  mt={4}> 
-          <Box   p={2}   display={'grid'}>
-          <Text fontSize={'20px'} width={'100%'} fontWeight={500} fontStyle={'normal'}  color={'#171717'} fontFamily={'Plus Jakarta Sans'} >Enter Your City to Start Exploring</Text>
-          </Box>
-         
-          <Box   p={0}  mt={'20px'} display={'grid'}>
-          <Input padding={2} width={'100%'} backgroundColor={'white'} placeholder="Type your city here..." borderRadius={'20px'} type='email' />
-          <Button  borderRadius={'20px'}mt={4} backgroundColor={'#F80'} colorScheme='#F80'>Explore Now</Button>
-          <Button mt={4} borderRadius={'20px'} color={'#F80'} variant='ghost' colorScheme='#F80'>Share my location</Button>
-      
-          </Box>
-           </Box>
-         
-  
+        <Box width={"100%"} display={"grid"} mt={"2px"}>
+          <Center p={4} width={"100%"}>
+            <Box width={"100%"} p={0} mt={4}>
+              <Box p={2} display={"grid"}>
+                <Text
+                  fontSize={"20px"}
+                  width={"100%"}
+                  fontWeight={500}
+                  fontStyle={"normal"}
+                  color={"#171717"}
+                  fontFamily={"Plus Jakarta Sans"}
+                >
+                  Enter Your City to Start Exploring
+                </Text>
+              </Box>
+
+              <Box p={0} mt={"20px"} display={"grid"}>
+                <Input
+                  padding={2}
+                  width={"100%"}
+                  backgroundColor={"white"}
+                  placeholder="Type your city here..."
+                  borderRadius={"20px"}
+                  type="email"
+                />
+                <Button
+                  borderRadius={"20px"}
+                  mt={4}
+                  backgroundColor={"#F80"}
+                  colorScheme="#F80"
+                >
+                  Explore Now
+                </Button>
+                <Button
+                  mt={4}
+                  borderRadius={"20px"}
+                  color={"#F80"}
+                  variant="ghost"
+                  colorScheme="#F80"
+                >
+                  Share my location
+                </Button>
+              </Box>
+            </Box>
           </Center>
-          
         </Box>
 
-        <Box display={'grid'} p={2} backgroundColor={'rgba(37, 37, 37, 0.10)'}>
-        <Box p={2}>
-        ✅ Thousands of Local Gems Uncovered
-        </Box>
-        <Box  p={2}>
-        ✅ Curated Picks, Just for You
-        </Box>
-        <Box  p={2}>
-        ✅ Direct Connect with Local Businesses
+        <Box display={"grid"} p={2} backgroundColor={"rgba(37, 37, 37, 0.10)"}>
+          <Box p={2}>✅ Thousands of Local Gems Uncovered</Box> 
+          <Box p={2}>✅ Curated Picks, Just for You</Box>
+          <Box p={2}>✅ Direct Connect with Local Businesses</Box>
         </Box>
 
+        <Box
+          display={"grid"}
+          p={2}
+          backgroundColor={"#57E5F3, #79CDD6"}
+          bgGradient="linear(to-r, #57E5F3, #79CDD6)"
+          pb={6}
+        >
+          <Text
+            fontSize={"24px"}
+            width={"353px"}
+            mx={2}
+            fontWeight={500}
+            lineHeight={"36px"}
+            fontStyle={"normal"}
+            letterSpacing={"-0.4px"}
+            color={"#171717"}
+            fontFamily={"Plus Jakarta Sans"}
+          >
+            Discover Your World with Wapi.ke.com - Unveiling the Joy of Local
+            Exploration
+          </Text>
 
+          <Text
+            fontSize={"18px"}
+            width={"353px"}
+            my={2}
+            mx={2}
+            fontWeight={400}
+            lineHeight={"27px"}
+            fontStyle={"normal"}
+            letterSpacing={"-0.4px"}
+            color={"#171717"}
+            fontFamily={"Plus Jakarta Sans"}
+          >
+            Welcome to wapi.ke.com, your ultimate compass to everything
+            significant and exciting around you!
+          </Text>
+
+          <Text
+            fontSize={"18px"}
+            width={"353px"}
+            my={2}
+            mx={2}
+            fontWeight={400}
+            lineHeight={"27px"}
+            fontStyle={"normal"}
+            letterSpacing={"-0.4px"}
+            color={"#171717"}
+            fontFamily={"Plus Jakarta Sans"}
+          >
+            Imagine having a personal local guide that navigates you through the
+            wonders nestled in your vicinity - from the coziest coffee shops and
+            buzzing local markets to serene parks and pulsating events. That's
+            what wapi.ke.com is all about; transforming the way you explore your
+            neighborhood and beyond.
+          </Text>
+          <Text
+            fontSize={"18px"}
+            width={"353px"}
+            mx={2}
+            my={2}
+            fontWeight={400}
+            lineHeight={"27px"}
+            fontStyle={"normal"}
+            letterSpacing={"-0.4px"}
+            color={"#171717"}
+            fontFamily={"Plus Jakarta Sans"}
+          >
+            Since our inception, we've been on a mission to make your search for
+            nearby attractions, services, and activities as seamless and
+            enjoyable as a leisurely stroll on a sunny beach. We're not just any
+            platform; we're your gateway to uncovering the hidden gems and
+            possibilities that lie just around the corner.
+          </Text>
+          <Text
+            fontSize={"18px"}
+            width={"353px"}
+            my={2}
+            mx={2}
+            fontWeight={400}
+            lineHeight={"27px"}
+            fontStyle={"normal"}
+            letterSpacing={"-0.4px"}
+            color={"#171717"}
+            fontFamily={"Plus Jakarta Sans"}
+          >
+            With thousands of listings and an ever-expanding community,
+            Wapi.ke.com is rapidly becoming the go-to hub for millions of users
+            seeking to enrich their local experiences.
+          </Text>
+          <Text
+            fontSize={"18px"}
+            width={"353px"}
+            my={2}
+            mx={2}
+            fontWeight={400}
+            lineHeight={"27px"}
+            fontStyle={"normal"}
+            letterSpacing={"-0.4px"}
+            color={"#171717"}
+            fontFamily={"Plus Jakarta Sans"}
+          >
+            Month after month, we grow, adding more features, listings, and
+            areas to explore, all with the aim of being your first stop in the
+            quest for discovering what's near you.
+          </Text>
+          <Text
+            fontSize={"18px"}
+            width={"353px"}
+            my={2}
+            mx={2}
+            fontWeight={400}
+            lineHeight={"27px"}
+            fontStyle={"normal"}
+            letterSpacing={"-0.4px"}
+            color={"#171717"}
+            fontFamily={"Plus Jakarta Sans"}
+          >
+            Whether you're looking for a new dining experience, the nearest
+            laundry service, or exciting local activities, Wapi.ke.com brings
+            the world around you to your fingertips.
+          </Text>
+          <Text
+            fontSize={"18px"}
+            width={"353px"}
+            my={2}
+            mx={2}
+            fontWeight={400}
+            lineHeight={"27px"}
+            fontStyle={"normal"}
+            letterSpacing={"-0.4px"}
+            color={"#171717"}
+            fontFamily={"Plus Jakarta Sans"}
+          >
+            Dive into Wapi.ke.com, where every search is the beginning of a new
+            adventure. Let's make every day a journey to discover the joy of
+            local exploration together!
+          </Text>
+        </Box>
+        <Box  pb={6}display={"grid"} p={2}>
+          <Box p={2}>
+            <Text
+              fontSize={"24px"}
+              width={"353px"}
+              mx={2}
+              fontWeight={500}
+              lineHeight={"36px"}
+              fontStyle={"normal"}
+              letterSpacing={"-0.4px"}
+              color={"#171717"}
+              fontFamily={"Plus Jakarta Sans"}
+            >
+              Popular Categories
+            </Text>
+          </Box>
+
+          <Center display={"grid"}>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Top Locations
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Curated by the editorial team
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Discover Beachfront Cafés
+              </Text>
+              <Text
+                fontSize={"18px"}
+                maxWidth={"340px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Sip your favorite brew with a view at Diani's best beachfront
+                cafés, where the coffee is as invigorating as the ocean breeze.
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Explore Local Markets
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Dive into the vibrant culture of Diani by exploring local
+                markets, a treasure trove of crafts, fresh produce, and unique
+                finds.
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Adventure Sports in Diani
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Thrill-seekers, rejoice! From kite surfing to skydiving, Diani's
+                adventure sports are sure to get your adrenaline pumping.
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Marine Wildlife Tours
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Embark on a marine wildlife tour to witness Diani's underwater
+                marvels, including dolphins, turtles, and the elusive whale
+                shark.
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Cultural Experiences
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Immerse yourself in the rich cultural tapestry of Diani with
+                experiences that bring you closer to its history and heritage.
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Eco-Friendly Stays
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Stay sustainably in Diani's eco-friendly accommodations, where
+                luxury meets environmental consciousness.
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Wellness Retreats
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Rejuvenate your mind, body, and soul at Diani's wellness
+                retreats, your sanctuary for health and harmony.
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Culinary Tours
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Taste your way through Diani on a culinary tour, savoring the
+                flavors that make Swahili cuisine a delightful journey.
+              </Text>
+            </Box>
+            <Button
+              borderRadius={"20px"}
+              width={"100%"}
+              mt={4}
+              variant="outline"
+              borderColor={"#F8"}
+              color={"#F80"}
+              // colorScheme="#F80"
+            >
+              Show me all categories
+            </Button>
+          </Center>
+        </Box>
+        <Box display={"grid"} p={2} backgroundColor={"white"}>
+          <Box p={2}> Discover diani gems</Box>
+        </Box>
+        <Box display={"grid"} p={2}>
+          <Box p={2}>
+            <Text
+              fontSize={"18px"}
+              width={"353px"}
+              mx={2}
+              color={"#F80"}
+              fontWeight={500}
+              lineHeight={"36px"}
+              fontStyle={"normal"}
+              letterSpacing={"-0.4px"}
+              fontFamily={"Plus Jakarta Sans"}
+            >
+              Explore by Category
+            </Text>
+            <Text
+              fontSize={"24px"}
+              width={"353px"}
+              mx={2}
+              fontWeight={500}
+              lineHeight={"36px"}
+              fontStyle={"normal"}
+              letterSpacing={"-0.4px"}
+              color={"#171717"}
+              fontFamily={"Plus Jakarta Sans"}
+            >
+              Diani's Diverse Attractions
+            </Text>
+            <Text
+              fontSize={"18px"}
+              width={"353px"}
+              mx={2}
+              fontWeight={400}
+              lineHeight={"27px"}
+              fontStyle={"normal"}
+              letterSpacing={"-0.4px"}
+              color={"#575757"}
+              fontFamily={"Plus Jakarta Sans"}
+            >
+              Your guide to the wonders of Diani, sorted for every interest
+            </Text>
+          </Box>
+
+          <Center display={"grid"}>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                🏝️ Beachfront Leisure
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Indulge in the serene beauty of Diani’s sandy shores and
+                waterfront relaxation spots.
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                🏄‍♂️ Adventure and Sports
+              </Text>
+              <Text
+                fontSize={"18px"}
+                maxWidth={"340px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Get your heart racing with kite surfing, diving, and more
+                adrenaline-pumping activities
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                👩‍🌾 Cultural Heritage Sites
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Discover the rich history and traditions at sites like the Kongo
+                Mosque and local museums.
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                🦁 Wildlife and Nature Reserves
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Connect with nature and wildlife in reserves like Shimba Hills
+                and the Colobus Conservation
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                🐳 Marine Exploration
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Embark on underwater adventures in the Kisite-Mpunguti Marine
+                Park.
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                🌮 Culinary Journeys
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Savor the tastes of Diani with traditional Swahili cooking
+                classes and food tours
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                🧘‍♀️ Wellness and Spa
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Relax and rejuvenate at Diani’s top wellness retreats and spa
+                facilities.
+              </Text>
+            </Box>
+            <Box
+              mt={2}
+              display={"grid"}
+              borderRadius={"20px"}
+              backgroundColor={"white"}
+              border={"1px solid rgba(22, 104, 112, 0.80)"}
+              p={2}
+            >
+              <Text
+                fontSize={"20px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={500}
+                lineHeight={"36px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#171717"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                🎨 Local Markets and Art
+              </Text>
+              <Text
+                fontSize={"18px"}
+                width={"353px"}
+                mx={2}
+                fontWeight={400}
+                lineHeight={"27px"}
+                fontStyle={"normal"}
+                letterSpacing={"-0.4px"}
+                color={"#575757"}
+                fontFamily={"Plus Jakarta Sans"}
+              >
+                Experience the vibrant local markets and galleries showcasing
+                Kenyan art and crafts.
+              </Text>
+            </Box>
+
+            <Button
+              borderRadius={"20px"}
+              width={"100%"}
+              mt={4}
+              variant="outline"
+              color={"#F80"}
+              // backgroundColor={"#F80"}
+              colorScheme="#F80"
+            >
+              Show me all categories
+            </Button>
+          </Center>
+        </Box>
+
+        <Box display={"grid"} p={2} backgroundColor={"white"}>
+          <Box p={2}>
+            {" "}
+            <Text
+              fontSize={"24px"}
+              width={"353px"}
+              mx={2}
+              fontWeight={500}
+              lineHeight={"36px"}
+              fontStyle={"normal"}
+              letterSpacing={"-0.4px"}
+              color={"#171717"}
+              fontFamily={"Plus Jakarta Sans"}
+            >
+              Popular Searches
+            </Text>
+          </Box>
+          <Box p={2}>
+            {" "}
+            <Text
+              fontSize={"18px"}
+              width={"353px"}
+              mx={2}
+              fontWeight={400}
+              lineHeight={"27px"}
+              fontStyle={"normal"}
+              letterSpacing={"-0.4px"}
+              color={"#252525"}
+              fontFamily={"Plus Jakarta Sans"}
+            >
+              Dive into Diani's highlights with our 'Popular Searches' guide,
+              designed to lead you straight to the heart of this Kenyan
+              paradise. From sun-kissed beach accommodations and lively dining
+              spots to adventurous water sports and serene natural escapes,
+              we've curated the top categories to match every interest. Whether
+              you're looking to connect with local culture through safaris and
+              markets, seeking wellness retreats, or needing practical travel
+              tips, our guide simplifies your journey to discovering Diani's
+              best
+            </Text>
+          </Box>
+
+        </Box>
+        <Box display={"grid"} p={2}>
+              <Box p={2}>
+            <Text
+              fontSize={"18px"}
+              width={"353px"}
+              mx={2}
+              color={"#F80"}
+              fontWeight={500}
+              lineHeight={"36px"}
+              fontStyle={"normal"}
+              letterSpacing={"-0.4px"}
+              fontFamily={"Plus Jakarta Sans"}
+            >
+          Discover Diani with wapiii
+            </Text>
+            <Text
+              fontSize={"24px"}
+              width={"353px"}
+              mx={2}
+              fontWeight={500}
+              lineHeight={"36px"}
+              fontStyle={"normal"}
+              letterSpacing={"-0.4px"}
+              color={"#171717"}
+              fontFamily={"Plus Jakarta Sans"}
+            >
+             Your Ultimate Local Guide
+            </Text>
+            <Text
+              fontSize={"18px"}
+              width={"353px"}
+              mx={2}
+              fontWeight={400}
+              lineHeight={"27px"}
+              fontStyle={"normal"}
+              letterSpacing={"-0.4px"}
+              color={"#575757"}
+              fontFamily={"Plus Jakarta Sans"}
+            >
+              Unveil the beauty and excitement of Diani, Kenya, tailored to your interests and location.
+            </Text>
+          </Box>
+          <Box p={2}>
+    
+            <Text
+              fontSize={"24px"}
+              width={"353px"}
+              mx={2}
+              fontWeight={500}
+              lineHeight={"36px"}
+              fontStyle={"normal"}
+              letterSpacing={"-0.4px"}
+              color={"#171717"}
+              fontFamily={"Plus Jakarta Sans"}
+            >
+            Explore the Best of Diani Beach Activities
+            </Text>
+            <Text
+              fontSize={"18px"}
+              width={"353px"}
+              mx={2}
+              fontWeight={400}
+              lineHeight={"27px"}
+              fontStyle={"italic"}
+              letterSpacing={"-0.4px"}
+              color={"#575757"}
+              fontFamily={"Plus Jakarta Sans"}
+            >
+            From serene sunbathing to adrenaline-pumping water sports, discover what makes Diani's beaches unforgettable.
+            </Text>
+            <Text
+              fontSize={"18px"}
+              width={"353px"}
+              mx={2}
+              fontWeight={400}
+              lineHeight={"27px"}
+              fontStyle={"normal"}
+              letterSpacing={"-0.4px"}
+              color={"#171717"}
+              fontFamily={"Plus Jakarta Sans"}
+            >
+           Embrace the sun-kissed shores and crystal-clear waters of Diani, where beach life is elevated to art. Whether you're eager to dive into 'water sports in Diani, Kenya' or simply relax by the sea, wapiii guides you to the perfect spots
+            </Text>
+          </Box>
         </Box>
       </Box>
     </App>

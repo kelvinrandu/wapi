@@ -13,9 +13,11 @@ import {
   Box,
   Center,
   Button,
+  Badge,
   Input,
 } from "@chakra-ui/react";
 import { useSearch } from "../utils/search";
+import { PhoneIcon, AddIcon, WarningIcon, StarIcon } from "@chakra-ui/icons";
 
 const items = [
   {
@@ -826,6 +828,16 @@ export default function Home() {
   const [_longitude, setLongitude] = useState();
   const [selected, setSelected] = useState(options[0]);
   const [filtered, setFiltered] = useState(items);
+  const property = {
+    imageUrl: "https://bit.ly/2Z4KKcF",
+    imageAlt: "Rear view of modern home with pool",
+    beds: 3,
+    baths: 2,
+    title: "Modern home in city center in the heart of historic Los Angeles",
+    formattedPrice: "$1,900.00",
+    reviewCount: 34,
+    rating: 4,
+  };
 
   return (
     <App setSelected={setSelected} selected={selected} options={options}>
@@ -889,7 +901,7 @@ export default function Home() {
         </Box>
 
         <Box display={"grid"} p={2} backgroundColor={"rgba(37, 37, 37, 0.10)"}>
-          <Box p={2}>✅ Thousands of Local Gems Uncovered</Box> 
+          <Box p={2}>✅ Thousands of Local Gems Uncovered</Box>
           <Box p={2}>✅ Curated Picks, Just for You</Box>
           <Box p={2}>✅ Direct Connect with Local Businesses</Box>
         </Box>
@@ -946,7 +958,7 @@ export default function Home() {
           >
             Imagine having a personal local guide that navigates you through the
             wonders nestled in your vicinity - from the coziest coffee shops and
-            buzzing local markets to serene parks and pulsating events. That's
+            buzzing local markets to serene parks and pulsating events. That&apos;s
             what wapi.ke.com is all about; transforming the way you explore your
             neighborhood and beyond.
           </Text>
@@ -962,10 +974,10 @@ export default function Home() {
             color={"#171717"}
             fontFamily={"Plus Jakarta Sans"}
           >
-            Since our inception, we've been on a mission to make your search for
+            Since our inception, we&apos;ve been on a mission to make your search for
             nearby attractions, services, and activities as seamless and
-            enjoyable as a leisurely stroll on a sunny beach. We're not just any
-            platform; we're your gateway to uncovering the hidden gems and
+            enjoyable as a leisurely stroll on a sunny beach. We&apos;re not just any
+            platform; we&apos;re your gateway to uncovering the hidden gems and
             possibilities that lie just around the corner.
           </Text>
           <Text
@@ -998,7 +1010,7 @@ export default function Home() {
           >
             Month after month, we grow, adding more features, listings, and
             areas to explore, all with the aim of being your first stop in the
-            quest for discovering what's near you.
+            quest for discovering what&apos;s near you.
           </Text>
           <Text
             fontSize={"18px"}
@@ -1012,7 +1024,7 @@ export default function Home() {
             color={"#171717"}
             fontFamily={"Plus Jakarta Sans"}
           >
-            Whether you're looking for a new dining experience, the nearest
+            Whether you&apos;re looking for a new dining experience, the nearest
             laundry service, or exciting local activities, Wapi.ke.com brings
             the world around you to your fingertips.
           </Text>
@@ -1029,11 +1041,11 @@ export default function Home() {
             fontFamily={"Plus Jakarta Sans"}
           >
             Dive into Wapi.ke.com, where every search is the beginning of a new
-            adventure. Let's make every day a journey to discover the joy of
+            adventure. Let&apos;s make every day a journey to discover the joy of
             local exploration together!
           </Text>
         </Box>
-        <Box  pb={6}display={"grid"} p={2}>
+        <Box pb={6} display={"grid"} p={2}>
           <Box p={2}>
             <Text
               fontSize={"24px"}
@@ -1118,7 +1130,7 @@ export default function Home() {
                 color={"#575757"}
                 fontFamily={"Plus Jakarta Sans"}
               >
-                Sip your favorite brew with a view at Diani's best beachfront
+                Sip your favorite brew with a view at Diani&apos;s best beachfront
                 cafés, where the coffee is as invigorating as the ocean breeze.
               </Text>
             </Box>
@@ -1191,7 +1203,7 @@ export default function Home() {
                 color={"#575757"}
                 fontFamily={"Plus Jakarta Sans"}
               >
-                Thrill-seekers, rejoice! From kite surfing to skydiving, Diani's
+                Thrill-seekers, rejoice! From kite surfing to skydiving, Diani&apos;s
                 adventure sports are sure to get your adrenaline pumping.
               </Text>
             </Box>
@@ -1227,7 +1239,7 @@ export default function Home() {
                 color={"#575757"}
                 fontFamily={"Plus Jakarta Sans"}
               >
-                Embark on a marine wildlife tour to witness Diani's underwater
+                Embark on a marine wildlife tour to witness Diani&apos;s underwater
                 marvels, including dolphins, turtles, and the elusive whale
                 shark.
               </Text>
@@ -1300,7 +1312,7 @@ export default function Home() {
                 color={"#575757"}
                 fontFamily={"Plus Jakarta Sans"}
               >
-                Stay sustainably in Diani's eco-friendly accommodations, where
+                Stay sustainably in Diani&apos;s eco-friendly accommodations, where
                 luxury meets environmental consciousness.
               </Text>
             </Box>
@@ -1336,7 +1348,7 @@ export default function Home() {
                 color={"#575757"}
                 fontFamily={"Plus Jakarta Sans"}
               >
-                Rejuvenate your mind, body, and soul at Diani's wellness
+                Rejuvenate your mind, body, and soul at Diani&apos;s wellness
                 retreats, your sanctuary for health and harmony.
               </Text>
             </Box>
@@ -1380,6 +1392,7 @@ export default function Home() {
               borderRadius={"20px"}
               width={"100%"}
               mt={4}
+              mb={4}
               variant="outline"
               borderColor={"#F8"}
               color={"#F80"}
@@ -1391,6 +1404,122 @@ export default function Home() {
         </Box>
         <Box display={"grid"} p={2} backgroundColor={"white"}>
           <Box p={2}> Discover diani gems</Box>
+          <Flex>
+          <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+            <Image
+              height={100}
+              width={100}
+              src={"/1.png"}
+              alt={property.imageAlt}
+            />
+
+            <Box p="6">
+              <Box display="flex" alignItems="baseline">
+                <Badge borderRadius="full" px="2" colorScheme="teal">
+                  New
+                </Badge>
+                <Box
+                  color="gray.500"
+                  fontWeight="semibold"
+                  letterSpacing="wide"
+                  fontSize="xs"
+                  textTransform="uppercase"
+                  ml="2"
+                >
+                  {property.beds} beds &bull; {property.baths} baths
+                </Box>
+              </Box>
+
+              <Box
+                mt="1"
+                fontWeight="semibold"
+                as="h4"
+                lineHeight="tight"
+                noOfLines={1}
+              >
+                {property.title}
+              </Box>
+
+              <Box>
+                {property.formattedPrice}
+                <Box as="span" color="gray.600" fontSize="sm">
+                  / wk
+                </Box>
+              </Box>
+
+              <Box display="flex" mt="2" alignItems="center">
+                {Array(5)
+                  .fill("")
+                  .map((_, i) => (
+                    <StarIcon
+                      key={i}
+                      color={i < property.rating ? "teal.500" : "gray.300"}
+                    />
+                  ))}
+                <Box as="span" ml="2" color="gray.600" fontSize="sm">
+                  {property.reviewCount} reviews
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+          <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+            <Image
+              height={100}
+              width={100}
+              src={"/1.png"}
+              alt={property.imageAlt}
+            />
+
+            <Box p="6">
+              <Box display="flex" alignItems="baseline">
+                <Badge borderRadius="full" px="2" colorScheme="teal">
+                  New
+                </Badge>
+                <Box
+                  color="gray.500"
+                  fontWeight="semibold"
+                  letterSpacing="wide"
+                  fontSize="xs"
+                  textTransform="uppercase"
+                  ml="2"
+                >
+                  {property.beds} beds &bull; {property.baths} baths
+                </Box>
+              </Box>
+
+              <Box
+                mt="1"
+                fontWeight="semibold"
+                as="h4"
+                lineHeight="tight"
+                noOfLines={1}
+              >
+                {property.title}
+              </Box>
+
+              <Box>
+                {property.formattedPrice}
+                <Box as="span" color="gray.600" fontSize="sm">
+                  / wk
+                </Box>
+              </Box>
+
+              <Box display="flex" mt="2" alignItems="center">
+                {Array(5)
+                  .fill("")
+                  .map((_, i) => (
+                    <StarIcon
+                      key={i}
+                      color={i < property.rating ? "teal.500" : "gray.300"}
+                    />
+                  ))}
+                <Box as="span" ml="2" color="gray.600" fontSize="sm">
+                  {property.reviewCount} reviews
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+          </Flex>
         </Box>
         <Box display={"grid"} p={2}>
           <Box p={2}>
@@ -1418,7 +1547,7 @@ export default function Home() {
               color={"#171717"}
               fontFamily={"Plus Jakarta Sans"}
             >
-              Diani's Diverse Attractions
+              Diani&apos;s Diverse Attractions
             </Text>
             <Text
               fontSize={"18px"}
@@ -1729,6 +1858,7 @@ export default function Home() {
               borderRadius={"20px"}
               width={"100%"}
               mt={4}
+              mb={4}
               variant="outline"
               color={"#F80"}
               // backgroundColor={"#F80"}
@@ -1769,21 +1899,20 @@ export default function Home() {
               color={"#252525"}
               fontFamily={"Plus Jakarta Sans"}
             >
-              Dive into Diani's highlights with our 'Popular Searches' guide,
+              Dive into Diani&apos;s highlights with our &apos;Popular Searches&apos; guide,
               designed to lead you straight to the heart of this Kenyan
               paradise. From sun-kissed beach accommodations and lively dining
               spots to adventurous water sports and serene natural escapes,
-              we've curated the top categories to match every interest. Whether
-              you're looking to connect with local culture through safaris and
+              we&apos;ve curated the top categories to match every interest. Whether
+              you&apos;re looking to connect with local culture through safaris and
               markets, seeking wellness retreats, or needing practical travel
-              tips, our guide simplifies your journey to discovering Diani's
+              tips, our guide simplifies your journey to discovering Diani&apos;s
               best
             </Text>
           </Box>
-
         </Box>
         <Box display={"grid"} p={2}>
-              <Box p={2}>
+          <Box p={2}>
             <Text
               fontSize={"18px"}
               width={"353px"}
@@ -1795,7 +1924,7 @@ export default function Home() {
               letterSpacing={"-0.4px"}
               fontFamily={"Plus Jakarta Sans"}
             >
-          Discover Diani with wapiii
+              Discover Diani with wapiii
             </Text>
             <Text
               fontSize={"24px"}
@@ -1808,7 +1937,7 @@ export default function Home() {
               color={"#171717"}
               fontFamily={"Plus Jakarta Sans"}
             >
-             Your Ultimate Local Guide
+              Your Ultimate Local Guide
             </Text>
             <Text
               fontSize={"18px"}
@@ -1821,11 +1950,11 @@ export default function Home() {
               color={"#575757"}
               fontFamily={"Plus Jakarta Sans"}
             >
-              Unveil the beauty and excitement of Diani, Kenya, tailored to your interests and location.
+              Unveil the beauty and excitement of Diani, Kenya, tailored to your
+              interests and location.
             </Text>
           </Box>
           <Box p={2}>
-    
             <Text
               fontSize={"24px"}
               width={"353px"}
@@ -1837,7 +1966,7 @@ export default function Home() {
               color={"#171717"}
               fontFamily={"Plus Jakarta Sans"}
             >
-            Explore the Best of Diani Beach Activities
+              Explore the Best of Diani Beach Activities
             </Text>
             <Text
               fontSize={"18px"}
@@ -1850,7 +1979,8 @@ export default function Home() {
               color={"#575757"}
               fontFamily={"Plus Jakarta Sans"}
             >
-            From serene sunbathing to adrenaline-pumping water sports, discover what makes Diani's beaches unforgettable.
+              From serene sunbathing to adrenaline-pumping water sports,
+              discover what makes Diani&apos;s beaches unforgettable.
             </Text>
             <Text
               fontSize={"18px"}
@@ -1863,7 +1993,10 @@ export default function Home() {
               color={"#171717"}
               fontFamily={"Plus Jakarta Sans"}
             >
-           Embrace the sun-kissed shores and crystal-clear waters of Diani, where beach life is elevated to art. Whether you're eager to dive into 'water sports in Diani, Kenya' or simply relax by the sea, wapiii guides you to the perfect spots
+              Embrace the sun-kissed shores and crystal-clear waters of Diani,
+              where beach life is elevated to art. Whether you&apos;re eager to dive
+              into &apos;water sports in Diani, Kenya&apos;or simply relax by the sea,
+              wapiii guides you to the perfect spots
             </Text>
           </Box>
         </Box>

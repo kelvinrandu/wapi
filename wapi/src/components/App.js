@@ -18,7 +18,7 @@ import MobileNav from "./MobileNav";
     setSelected(selectedOption)
     console.log(`Option selected:`, selectedOption)
   }
-  console.log('otions1',options)
+
 
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
@@ -41,7 +41,7 @@ import MobileNav from "./MobileNav";
       </Drawer>
       {/* mobilenav */}
       <MobileNav setSelected={setSelected} selected={selected} options={options} onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
+      <Box >
         {children}
       </Box>
     </Box>

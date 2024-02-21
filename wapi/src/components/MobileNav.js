@@ -8,6 +8,7 @@ import {
   Flex,
   HStack,
   VStack,
+  Stack,
   useColorModeValue,
   Link,
   Text,
@@ -18,27 +19,18 @@ import {
   MenuItem,
   MenuList,
   Badge,
-
 } from "@chakra-ui/react";
-import Select from "react-select"
+import Select from "react-select";
+import Image from "next/image";
 import { FiMenu, FiChevronDown } from "react-icons/fi";
 
-const MobileNav = ({ onOpen,selected,setSelected,options }) => {
-  console.log('options',options)
+const MobileNav = ({ onOpen, selected, setSelected, options }) => {
+  console.log("options", options);
   const handleChange = (selectedOption) => {
-    setSelected(selectedOption)
-    // console.log(`Option selected:`, selectedOption)
-  }
-  //   const { user, error, isLoading } = useUser();
-  //   const user_Id = user ? user.sub : [];
-  //   const { data, loading } = useQuery(GET_UNREAD_ORDERS_FOR_ME_QUERY, {
-  //     variables: { user_id: user_Id },
-  //   });
+    setSelected(selectedOption);
 
-  //   const allOrders = data ? data.orders : [];
+  };
 
-  //   if (isLoading) return <div>Loading...</div>;
-  //   if (error) return <div>{error.message}</div>;
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -51,30 +43,52 @@ const MobileNav = ({ onOpen,selected,setSelected,options }) => {
       justifyContent={{ base: "space-between", md: "flex-end" }}
       // {...rest}
     >
+      <Box>
+
+     
       <IconButton
-        display={{ base: "flex", md: "none" }}
+        display={{ base: "none", md: "none" }}
         onClick={onOpen}
         variant="outline"
         aria-label="open menu"
         icon={<FiMenu />}
       />
-      <Text
-        display={{ base: "flex", md: "none" }}
-        fontSize="xl"
-        fontFamily="monospace"
-        fontWeight="bold"
-      >
-        Wapi
-      </Text>
+       </Box>
 
-      <HStack spacing={{ base: "0", md: "6" }}>
-        <Flex>
+      {/* <HStack
+        maxWidth={200}
+        border={"1px solid red"}
+        gap={6}
+        spacing={{ base: "6", md: "6" }}
+      >
+        <Flex justifyContent={{ base: "space-between", md: "flex-end" }}>
+          <Image
+            src="/Bildmarke.svg"
+            width={32}
+            height={32}
+            alt="Picture of the author"
+          />
+          <Image src="/wapi.svg" width={52} height={52} alt="Logo" />
+        </Flex>
+      </HStack> */}
+      <Stack direction={['row', 'row']} spacing={'6px'}>
+      <Image
+            src="/Bildmarke.svg"
+            width={32}
+            height={32}
+            alt="Picture of the author"
+          />
+ <Image src="/wapi.svg" width={52} height={52} alt="Logo" />
+</Stack>
+
+      <HStack     spacing={{ base: "0", md: "6" }}>
+        <Flex display={{ base: "none", md: "none" }}>
           <Flex display={["flex", "flex", "flex"]} alignItems={"center"}>
-            <Select onChange={(event)=>handleChange(event)} value={selected} options={options} />
-            
-            
-    
-        
+            <Select
+              onChange={(event) => handleChange(event)}
+              value={selected}
+              options={options}
+            />
           </Flex>
           <Flex display={["none", "none", "none"]} alignItems={"center"}>
             <Menu>

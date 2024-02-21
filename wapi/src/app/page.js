@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import App from "@/components/App";
 import ItemSingle from "@/components/ItemSingle";
 import SearchBar from "@/components/SearchBar";
-import { Text, Flex, Spinner } from "@chakra-ui/react";
+import { Text, Flex, Spinner, Box,Center,Button ,Input} from "@chakra-ui/react";
 import { useSearch } from "../utils/search";
 
 const items = [
@@ -844,38 +844,6 @@ export default function Home() {
     return nearby(_latitude, _longitude, item?.latitude, item?.longitude, "K");
   };
 
-  // useEffect(() => {
-  //   if ("geolocation" in navigator) {
-  //     // Retrieve latitude & longitude coordinates from `navigator.geolocation` Web API
-  //     navigator.geolocation.getCurrentPosition(({ coords }) => {
-  //       const { latitude, longitude } = coords;
-  //       setLatitude1(latitude);
-  //       setLongitude(longitude);
-  //     });
-  //     console.log("longitude", navigator.geolocation);
-  //   }
-  //   //add this below comment ↓
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
-
-  // console.log("select", selected);
-
-  // useEffect(() => {
-  //   console.log("nea valuer", selected?.value);
-  //   if (selected?.value == "near") {
-  //     const _items = items.filter(matchesSearch);
-  //     console.log("items", _items);
-  //     var filt = items.filter(matchesSearch);
-  //     console.log(",filt", filt);
-  //     setFiltered(filt);
-  //   } else {
-  //     setFiltered(items);
-  //   }
-
-  //   //add this below comment ↓
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [selected]);
-
   const distance = (lat1, lon1, lat2, lon2, unit) => {
     if (lat1 == lat2 && lon1 == lon2) {
       return 0;
@@ -903,11 +871,48 @@ export default function Home() {
 
   return (
     <App setSelected={setSelected} selected={selected} options={options}>
-      <Text mb={2} fontSize="sm">
-        {"Landing page"}
-     
-      </Text>
+      <Box p={0}  backgroundColor={"#DCF9FF"}>
+        <Image
+          src="/Background.png"
+          width={1024}
+          height={1024}
+          alt="Picture of the author"
+        />
 
+        <Box   width={'100%'} display={'grid'} mt={'2px'}>
+          <Center p={4} width={'100%'} >
+          <Box width={'100%'} p={0}  mt={4}> 
+          <Box   p={2}   display={'grid'}>
+          <Text fontSize={'20px'} width={'100%'} fontWeight={500} fontStyle={'normal'}  color={'#171717'} fontFamily={'Plus Jakarta Sans'} >Enter Your City to Start Exploring</Text>
+          </Box>
+         
+          <Box   p={0}  mt={'20px'} display={'grid'}>
+          <Input padding={2} width={'100%'} backgroundColor={'white'} placeholder="Type your city here..." borderRadius={'20px'} type='email' />
+          <Button  borderRadius={'20px'}mt={4} backgroundColor={'#F80'} colorScheme='#F80'>Explore Now</Button>
+          <Button mt={4} borderRadius={'20px'} color={'#F80'} variant='ghost' colorScheme='#F80'>Share my location</Button>
+      
+          </Box>
+           </Box>
+         
+  
+          </Center>
+          
+        </Box>
+
+        <Box display={'grid'} p={2} backgroundColor={'rgba(37, 37, 37, 0.10)'}>
+        <Box p={2}>
+        ✅ Thousands of Local Gems Uncovered
+        </Box>
+        <Box  p={2}>
+        ✅ Curated Picks, Just for You
+        </Box>
+        <Box  p={2}>
+        ✅ Direct Connect with Local Businesses
+        </Box>
+
+
+        </Box>
+      </Box>
     </App>
   );
 }
